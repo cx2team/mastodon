@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { me, boostModal } from 'mastodon/initial_state';
 import { defineMessages, injectIntl } from 'react-intl';
 import { replyCompose } from 'mastodon/actions/compose';
-import { reblog, favourite, unreblog, unfavourite, bookmark, unreblog } from 'mastodon/actions/interactions';
+import { reblog, favourite, unreblog, unfavourite, bookmark, unbookmark } from 'mastodon/actions/interactions';
 import { makeGetStatus } from 'mastodon/selectors';
 import { initBoostModal } from 'mastodon/actions/boosts';
 import { openModal } from 'mastodon/actions/modal';
