@@ -295,7 +295,7 @@ class Status extends ImmutablePureComponent {
 
   render () {
     let media = null;
-    let statusAvatar, prepend, rebloggedByText;
+    let statusAvatar, prepend, rebloggedByText, wcx_warning_html;
 
     const { intl, hidden, featured, otherAccounts, unread, showThread, scrollKey, pictureInPicture } = this.props;
 
@@ -472,6 +472,11 @@ class Status extends ImmutablePureComponent {
     };
 
     const visibilityIcon = visibilityIconInfo[status.get('visibility')];
+	
+	var wcx_warning_reg = RegExp(/https:\/\/w.cx\//);
+    if(status.getIn(['account', 'url']).match(wcx_warning_reg)){
+      wcx_warning_html = (<span>该贴无法且禁止转出cx.cx和w.cx</span>);
+    }
 
     return (
       <HotKeys handlers={handlers}>
@@ -492,7 +497,7 @@ class Status extends ImmutablePureComponent {
                   {statusAvatar}
                 </div>
 
-                <DisplayName account={status.get('account')} others={otherAccounts} />
+                <DisplayName account={status.get('account')} others={otherAccounts} />{wcx_warning_html}
               </a>
             </div>
 

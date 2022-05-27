@@ -118,6 +118,7 @@ class DetailedStatus extends ImmutablePureComponent {
     let reblogIcon = 'retweet';
     let favouriteLink = '';
     let edited = '';
+	let wcx_warning_html = '';
 
     if (this.props.measureHeight) {
       outerStyle.height = `${this.state.height}px`;
@@ -246,6 +247,11 @@ class DetailedStatus extends ImmutablePureComponent {
           <EditedTimestamp statusId={status.get('id')} timestamp={status.get('edited_at')} />
         </React.Fragment>
       );
+    }
+	
+	var wcx_warning_reg = RegExp(/https:\/\/w.cx\//);
+    if(status.getIn(['account', 'url']).match(wcx_warning_reg)){
+      wcx_warning_html = (<span>该贴无法且禁止转出cx.cx和w.cx</span>);
     }
 
     return (
