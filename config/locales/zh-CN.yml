@@ -1585,6 +1585,7 @@ zh-CN:
     default: Mastodon（暗色主题）
     mastodon-light: Mastodon（亮色主题）
     sakura: Sakura（樱花）
+    forest: Forest（森林）
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"

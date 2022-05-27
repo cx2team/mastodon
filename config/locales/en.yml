@@ -1613,6 +1613,7 @@ en:
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
     sakura: Sakura
+    forest: Forest
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
