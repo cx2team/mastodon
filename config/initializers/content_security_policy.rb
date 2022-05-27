@@ -70,6 +70,7 @@ Rails.application.reloader.to_prepare do
       p.script_src      :unsafe_inline
       p.style_src       :unsafe_inline
       p.worker_src      :none
+	  p.font_src        :self, :data, assets_host
     end
 
     LetterOpenerWeb::LettersController.after_action do |p|
