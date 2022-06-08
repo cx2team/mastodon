@@ -457,6 +457,8 @@ class MediaGallery extends React.PureComponent {
   render () {
     const { media, intl, sensitive, height, defaultWidth, standalone, autoplay } = this.props;
     const { visible } = this.state;
+	
+	const size     = media.take(9).size;
 
     const width = this.state.width || defaultWidth;
 
@@ -476,7 +478,6 @@ class MediaGallery extends React.PureComponent {
       style.height = height;
     }
 
-	const size     = media.take(9).size;
     const uncached = media.every(attachment => attachment.get('type') === 'unknown');
 
     if (standalone && this.isFullSizeEligible()) {
