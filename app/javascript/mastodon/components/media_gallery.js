@@ -458,8 +458,6 @@ class MediaGallery extends React.PureComponent {
     const { media, intl, sensitive, height, defaultWidth, standalone, autoplay } = this.props;
     const { visible } = this.state;
 
-	const size     = media.take(9).size;
-
     const width = this.state.width || defaultWidth;
 
     let children, spoilerButton;
