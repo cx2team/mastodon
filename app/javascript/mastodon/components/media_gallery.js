@@ -132,7 +132,7 @@ class Item extends React.PureComponent {
 	
 	if (size === 5) {
       height = 50;
-      width = 33.3;
+      width = 33;
 
       if (index === 4) {
         width = 66.6;
@@ -159,7 +159,7 @@ class Item extends React.PureComponent {
 
     if (size === 6) {
       height = 50;
-      width = 33.3;
+      width = 33;
 
       if (index < 3) {
         bottom = '2px';
@@ -181,8 +181,8 @@ class Item extends React.PureComponent {
     }
 
     if (size === 7) {
-      height = 33.3;
-      width = 33.3;
+      height = 33;
+      width = 33;
 
       if (index === 6) {
         width = 100;
@@ -214,8 +214,8 @@ class Item extends React.PureComponent {
     }
 
     if (size === 8) {
-      height = 33.3;
-      width = 33.3;
+      height = 33;
+      width = 33;
 
       if (index === 7) {
         width = 66.6;
@@ -247,8 +247,8 @@ class Item extends React.PureComponent {
     }
 
     if (size === 9) {
-      height = 33.3;
-      width = 33.3;
+      height = 33;
+      width = 33;
 
       if (index < 6) {
         bottom = '2px';
@@ -458,6 +458,8 @@ class MediaGallery extends React.PureComponent {
     const { media, intl, sensitive, height, defaultWidth, standalone, autoplay } = this.props;
     const { visible } = this.state;
 
+	const size     = media.take(9).size;
+
     const width = this.state.width || defaultWidth;
 
     let children, spoilerButton;
@@ -468,14 +470,20 @@ class MediaGallery extends React.PureComponent {
       if (width) {
         style.height = width / this.props.media.getIn([0, 'meta', 'small', 'aspect']);
       }
+	} else if (size > 6) {
+      style.height = width / (1/1);
     } else if (width) {
       style.height = width / (16/9);
     } else {
       style.height = height;
     }
 
-    const size     = media.take(9).size;
     const uncached = media.every(attachment => attachment.get('type') === 'unknown');
+	
+	if (quote && style.height) {
+      style.height /= 2;
+      style.height /= 1;
+    }
 
     if (standalone && this.isFullSizeEligible()) {
       children = <Item standalone autoplay={autoplay} onClick={this.handleClick} attachment={media.get(0)} displayWidth={width} visible={visible} />;
