@@ -478,12 +478,8 @@ class MediaGallery extends React.PureComponent {
       style.height = height;
     }
 
+	const size     = media.take(9).size;
     const uncached = media.every(attachment => attachment.get('type') === 'unknown');
-	
-	if (quote && style.height) {
-      style.height /= 2;
-      style.height /= 1;
-    }
 
     if (standalone && this.isFullSizeEligible()) {
       children = <Item standalone autoplay={autoplay} onClick={this.handleClick} attachment={media.get(0)} displayWidth={width} visible={visible} />;
