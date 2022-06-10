@@ -5637,11 +5637,10 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
-he@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npm.taobao.org/he/download/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
-  integrity sha1-k0EP0hsAlzUVH4howvJx80J+I/0=
-
+he@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npm.taobao.org/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
+  integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
 hex-color-regex@^1.1.0:
   version "1.1.0"
@@ -7771,11 +7770,11 @@ node-gyp-build@^4.3.0:
   integrity sha512-iWjXZvmboq0ja1pUGULQBexmxq8CV4xBhX7VDOTbL7ZR4FOowwY/VOtRxBN/yKxmdGoIp4j5ysNT4u3S2pDQ3Q==
 
 node-html-parser@^1.2.20:
-  version "1.2.20"
-  resolved "https://registry.npm.taobao.org/node-html-parser/download/node-html-parser-1.2.20.tgz#37e9ebc627dbe3ff446eea4ac93e3d254b7c6ee4"
-  integrity sha1-N+nrxifb4/9EbupKyT49JUt8buQ=
+  version "1.4.9"
+  resolved "https://registry.nlark.com/node-html-parser/download/node-html-parser-1.4.9.tgz?cache=0&sync_timestamp=1631960727766&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fnode-html-parser%2Fdownload%2Fnode-html-parser-1.4.9.tgz#3c8f6cac46479fae5800725edb532e9ae8fd816c"
+  integrity sha1-PI9srEZHn65YAHJe21Mumuj9gWw=
   dependencies:
-    he "1.1.1"
+    he "1.2.0"
 
 
 node-int64@^0.4.0:
